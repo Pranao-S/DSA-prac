@@ -1,0 +1,556 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '9'
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["10.22.40.60"],"port":443,"protocol":"HTTPS","serviceName":"hce-fpplus-fcs-performance:forge-fcis-fcis-dataprocessorservice-svc","ingressName":"hce-fpplus-fcs-performance:forge-fcis-fcis-dataprocessorservice-ingress","hostname":"dataprocessorservice-psr.apps.psr.aks.forgeapp.honeywell.com","path":"/","allNodes":false},{"addresses":["10.22.40.60"],"port":443,"protocol":"HTTPS","serviceName":"hce-fpplus-fcs-performance:forge-fcis-fcis-dataprocessorservice-svc","ingressName":"hce-fpplus-fcs-performance:forge-fcis-fcis-dataprocessorservice-ingress","hostname":"dataprocessorservice-psr.apps.psr.aks.forgeapp.honeywell.com","path":"/actuator/health","allNodes":false}]
+    meta.helm.sh/release-name: forge-fcis
+    meta.helm.sh/release-namespace: hce-fpplus-fcs-performance
+    policies.kyverno.io/last-applied-patches: >
+      scale-down-replica.scale-down-deployment-replica-one.kyverno.io: replaced
+      /spec/replicas
+    prometheus.io/path: /actuator/prometheus
+    prometheus.io/port: '7000'
+    prometheus.io/scrape: 'true'
+  creationTimestamp: '2024-12-18T13:52:19Z'
+  generation: 12
+  labels:
+    app: forge-fcis-fcis-dataprocessorservice
+    app.kubernetes.io/managed-by: Helm
+    creatoremail: Rakesh.Rath_Honeywell.com
+    deployment: forge-fcis-fcis-dataprocessorservice
+    offeringname: forge_data_pipeline
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:prometheus.io/path: {}
+            f:prometheus.io/port: {}
+            f:prometheus.io/scrape: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:creatoremail: {}
+            f:deployment: {}
+            f:offeringname: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:deployment: {}
+            f:spec:
+              f:containers:
+                k:{"name":"dataprocessorservice"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"AZURE_CLIENT_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"AZURE_FEDERATED_TOKEN_FILE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"AZURE_TENANT_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CACHE_SERVICE_BUS_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CACHE_SERVICE_BUS_SUBSCRIPTION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CACHE_SERVICE_BUS_TOPIC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FCI_LOG_ROOT_LEVEL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FCI_MANAGEMENT_PORT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FileScanServiceBusSubscription"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FileScanServiceBusTopic"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_schema"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_url"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_username"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_INTFW_JWKS_URI"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_INTFW_OPA_URL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"IDENTITY_TOKEN_URL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"INTEGRATION_HEALTH_SB_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"INTEGRATION_HEALTH_SB_QUEUENAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ManagedIdentityClientID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"Name"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ServiceBusEndpoint"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ServiceBusSubscriptionName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ServiceBusTopicName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"StorageAccountName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TARGET-EVENTHUB-NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"dataProcessorThreadCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"fileScanContainerName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"fileScanMaxChunkSize"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"fileScanMaxFileSize"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"fileScanProcessorThreadCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"templateContainerName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:envFrom: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/mnt/secret-store"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/var/run/secrets/tokens"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"forge-fcis-fcis-dataprocessorservice-spc-volume"}:
+                  .: {}
+                  f:csi:
+                    .: {}
+                    f:driver: {}
+                    f:readOnly: {}
+                    f:volumeAttributes:
+                      .: {}
+                      f:secretProviderClass: {}
+                  f:name: {}
+                k:{"name":"service-acc-token"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+      manager: helm
+      operation: Update
+      time: '2025-02-14T09:36:45Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:field.cattle.io/publicEndpoints: {}
+        f:spec:
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:cattle.io/timestamp: {}
+              f:namespace: {}
+            f:spec:
+              f:containers:
+                k:{"name":"dataprocessorservice"}:
+                  f:resources:
+                    f:limits:
+                      f:memory: {}
+                    f:requests:
+                      f:memory: {}
+      manager: rancher
+      operation: Update
+      time: '2025-02-14T12:17:44Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-02-14T12:19:21Z'
+  name: forge-fcis-fcis-dataprocessorservice
+  namespace: hce-fpplus-fcs-performance
+  resourceVersion: '3057433073'
+  uid: 1d282c4e-51f9-40d6-bd07-df5e353f9c35
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: forge-fcis-fcis-dataprocessorservice
+      deployment: forge-fcis-fcis-dataprocessorservice
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: '2024-12-18T15:52:36Z'
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: '7000'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        app: forge-fcis-fcis-dataprocessorservice
+        deployment: forge-fcis-fcis-dataprocessorservice
+      namespace: hce-fpplus-fcs-performance
+    spec:
+      containers:
+        - env:
+            - name: CACHE_SERVICE_BUS_SUBSCRIPTION
+              value: fcis-data-processor-cache-sub
+            - name: FCI_LOG_ROOT_LEVEL
+              value: INFO
+            - name: FileScanServiceBusSubscription
+              value: fcis-data-processor-fileupload-sub
+            - name: FileScanServiceBusTopic
+              value: sbt-fp-fcis-fileupload-psr
+            - name: INTEGRATION_HEALTH_SB_NAMESPACE
+              value: sb-fp-nonprod-eastus-01
+            - name: INTEGRATION_HEALTH_SB_QUEUENAME
+              value: sbq-fp-fcis-healthstatus-psr
+            - name: ManagedIdentityClientID
+              value: 665763c2-efa1-433f-98bb-e96ceec5aa7b
+            - name: Name
+              value: dataprocessorservice
+            - name: ServiceBusSubscriptionName
+              value: fp_fcis_dataprocessing_subscription
+            - name: StorageAccountName
+              value: fpfumsperfeussa2
+            - name: TARGET-EVENTHUB-NAME
+              value: historyupdatemessage1.ordered
+            - name: dataProcessorThreadCount
+              value: '10'
+            - name: fileScanContainerName
+              value: cloudintegration-fileupload
+            - name: fileScanMaxChunkSize
+              value: '1000000'
+            - name: fileScanMaxFileSize
+              value: '5242880'
+            - name: fileScanProcessorThreadCount
+              value: '10'
+            - name: templateContainerName
+              value: cloudintegration-templates
+            - name: AZURE_CLIENT_ID
+              value: 665763c2-efa1-433f-98bb-e96ceec5aa7b
+            - name: AZURE_FEDERATED_TOKEN_FILE
+              value: ../var/run/secrets/tokens/service-acc-token
+            - name: AZURE_TENANT_ID
+              value: 96ece526-9c7d-48b0-8daf-8b93c90a5d18
+            - name: CACHE_SERVICE_BUS_NAME
+              value: sb-fp-nonprod-eastus-01
+            - name: CACHE_SERVICE_BUS_TOPIC
+              value: sbt-fp-fcis-cache-psr
+            - name: FCI_MANAGEMENT_PORT
+              value: '7000'
+            - name: HCE_FCI_db_schema
+              value: forgecloudintegrations
+            - name: HCE_FCI_db_url
+              value: >-
+                jdbc:postgresql://flexpsql-fp-sit-eastus-01.postgres.database.azure.com:5432/fp_fci_postgres_psr
+            - name: HCE_FCI_db_username
+              value: fp_fci_psr_dbowner
+            - name: HCE_INTFW_JWKS_URI
+              value: >-
+                https://builder-federated-identity-psr.honeywellforge.com/.well-known/jwks.json
+            - name: HCE_INTFW_OPA_URL
+              value: >-
+                https://fcispolicyagent-psr.apps.psr.aks.forgeapp.honeywell.com/v1/data/forge/cloudintegrationservice/deny
+            - name: IDENTITY_TOKEN_URL
+              value: >-
+                https://builder-federated-identity-psr.honeywellforge.com/oauth2/token
+            - name: ServiceBusEndpoint
+              value: sb-fp-nonprod-eastus-01.servicebus.windows.net
+            - name: ServiceBusTopicName
+              value: sbt-fp-fcis-integrationservicedistributor-psr
+          envFrom:
+            - secretRef:
+                name: forge-fcis-fcis-dataprocessorservice-spc-secret
+          image: >-
+            fci-docker-stable-local.artifactory-na.honeywell.com/fci.dataprocessorservice:0.1.35
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: dataprocessorservice
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 900m
+              memory: 2Gi
+            requests:
+              cpu: 700m
+              memory: 1Gi
+          securityContext:
+            capabilities:
+              drop:
+                - KILL
+                - MKNOD
+                - SETGID
+                - SETUID
+                - NET_RAW
+                - DAC_OVERRIDE
+                - SYS_PTRACE
+                - SYS_ADMIN
+                - CHOWN
+            readOnlyRootFilesystem: false
+          startupProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /mnt/secret-store
+              name: forge-fcis-fcis-dataprocessorservice-spc-volume
+              readOnly: true
+            - mountPath: /var/run/secrets/tokens
+              name: service-acc-token
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        agentpool: fppluspool
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 2000
+        runAsGroup: 3000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccount: azure-workload-identity-sa
+      serviceAccountName: azure-workload-identity-sa
+      terminationGracePeriodSeconds: 30
+      tolerations:
+        - effect: NoSchedule
+          key: fpplus-np-key
+          operator: Exists
+      volumes:
+        - csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: forge-fcis-fcis-dataprocessorservice-spc
+          name: forge-fcis-fcis-dataprocessorservice-spc-volume
+        - name: service-acc-token
+          projected:
+            defaultMode: 420
+            sources:
+              - serviceAccountToken:
+                  audience: api://AzureADTokenExchange
+                  expirationSeconds: 3600
+                  path: service-acc-token
+status:
+  availableReplicas: 1
+  conditions:
+    - lastTransitionTime: '2025-02-14T12:19:21Z'
+      lastUpdateTime: '2025-02-14T12:19:21Z'
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2024-12-18T13:52:19Z'
+      lastUpdateTime: '2025-02-14T12:19:21Z'
+      message: >-
+        ReplicaSet "forge-fcis-fcis-dataprocessorservice-86d7bdf899" has
+        successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: 'True'
+      type: Progressing
+  observedGeneration: 12
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

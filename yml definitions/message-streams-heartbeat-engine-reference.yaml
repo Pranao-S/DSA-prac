@@ -1,0 +1,614 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '33'
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"am-ref":"message-streams-heartbeat-engine","app":"message-streams-heartbeat-engine","creatoremail":"Anusha.Vutukuri_Honeywell.com","name":"message-streams-heartbeat-engine","offeringname":"iot-fpplus","pipelinekey":"QXZYIVRN","sbg":"HCE","sbu":"PERFORMANCE","unityid":"37242"},"name":"message-streams-heartbeat-engine","namespace":"hce-cbld-iot-performance"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"message-streams-heartbeat-engine","deployment":"message-streams-heartbeat-engine"}},"template":{"metadata":{"annotations":{"prometheus.io/port":"5000","prometheus.io/scrape":"true"},"labels":{"am-ref":"message-streams-heartbeat-engine","app":"message-streams-heartbeat-engine","creatoremail":"Anusha.Vutukuri_Honeywell.com","deployment":"message-streams-heartbeat-engine","offeringname":"iot-fpplus","pipelinekey":"QXZYIVRN","sbg":"HCE","sbu":"PERFORMANCE","unityid":"37242"}},"spec":{"containers":[{"env":[{"name":"APP__NAME","value":"message-streams-heartbeat-engine"},{"name":"CACHECONFIG__NOTIFICATIONS__CHANNEL","value":"MessageStreams_cbpt03loaddev"},{"name":"APP__TENANTNAME","value":"cbpt03loaddev"},{"name":"LAUNCHDARKLYSDKKEY","value":"sdk-66599b73-55e6-4c25-806a-bc2b298314c2"},{"name":"LAUNCHDARKLYENVIRONMENTNAME","value":"qxzyivrn_jyymprvl"},{"name":"GLOBALSTORAGE__ACCOUNTNAME","value":"cbpg03loaddev"},{"name":"EventHubMessageStreamSender__EventHubSendTimeoutInMs","value":"10000"},{"name":"KafkaMessageStreamSender__KafkaSendTimeoutInMs","value":"20000"},{"name":"KafkaMessageStreamSender__MaxAllowedKafkaTopicSizeInBytes","value":"25000000"},{"name":"CacheExpiry__RedisCacheExpirationForFaultyStreamInSeconds","value":"300"},{"name":"CacheExpiry__RedisCacheExpiryForNoFilterCacheInSeconds","value":"60"},{"name":"CacheConfig__RedisConfig__DefaultExpiration__TimeInSeconds","value":"604800"},{"name":"CacheConfig__RedisConfig__RedisCircutBreakerReOpenTimeInSeconds","value":"60"},{"name":"CacheConfig__RedisConfig__RedisCircutBreakerExceptionCount","value":"1"},{"name":"CacheConfig__RedisConfig__DefaultExpiration__ExpirationType","value":"Absolute"},{"name":"CacheConfig__InMemoryConfig__MaximumExpirationTime","value":"604800"},{"name":"CacheConfig__RedisConfig__GlobalName","value":"cbpg03loaddev"},{"name":"CacheConfig__RedisConfig__IsGlobalNameRequired","value":"false"},{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds","value":"120"},{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType","value":"Absolute"},{"name":"EVENTHUBCONFIG__EVENTHUBNAME","value":"deviceheartbeatnotification1.ordered"},{"name":"EVENTHUBCONFIG__BLOBCONTAINERNAME","value":"iot-vnext-eventhub-checkpoints"},{"name":"EVENTHUBCONFIG__CONSUMERGROUPNAME","value":"message-streams"},{"name":"EVENTHUBCONFIG__OPTIONS__RETRYTRYTIMEOUTINSEC","value":"60"},{"name":"EVENTHUBCONFIG__OPTIONS__PARTITIONOWNERSHIPEXPIRATIONINTERVALINSEC","value":"30"},{"name":"EVENTHUBCONFIG__OPTIONS__LOADBALANCINGUPDATEINTERVALINSEC","value":"10"},{"name":"EVENTHUBCONFIG__OPTIONS__MAXIMUMWAITTIMEINSEC","value":"60"},{"name":"EVENTHUBCONFIG__OPTIONS__CHECKPOINTWAITTIMEINMILLISECOND","value":"2000"},{"name":"EVENTHUBCONFIG__OPTIONS__EVENTBATCHMAXIMUMCOUNT","value":"10"},{"name":"TenantConfig__ResourcePrefix","value":"cbpg03loaddev/system/"},{"name":"TenantConfig__CacheConfig__InMemoryConfig__MaximumExpirationTime","value":"512"},{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds","value":"200"},{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType","value":"Absolute"},{"name":"TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString","value":"DefaultEndpointsProtocol=https;AccountName=epmgcpltpsr;AccountKey=B2ri8tsCyCo6OnV+oEzb5wfEbz6aXhRMvnt7QIfB2WL5sKFXwjk5H9118SrK/QKiMKRnYq5m2F6pc6ImfsOIZQ==;EndpointSuffix=core.windows.net"},{"name":"LaunchDarkly__SdkKey","value":"sdk-66599b73-55e6-4c25-806a-bc2b298314c2"},{"name":"LaunchDarkly__EnvironmentName","value":"Performance
+      -
+      AKS_US_CBLD"},{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__PUBLISHMESSAGETASKWAITTIMEINMILLISECONDS","value":"60000"},{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__MAXRETRYATTEMPTS","value":"100"},{"name":"POSTGRESQL__RetryCount","value":"5"},{"name":"Service__IsApiService","value":"false"}],"envFrom":[{"secretRef":{"name":"message-streams-heartbeat-engine-secret"}}],"image":"iot-fpplus-docker-stable-local.artifactory-na.honeywell.com/iot-fpplus.annotation-pointhistory-streamer:0.1.229","imagePullPolicy":"IfNotPresent","livenessProbe":{"failureThreshold":5,"httpGet":{"path":"/health/live","port":5000},"initialDelaySeconds":60,"periodSeconds":300,"successThreshold":1,"timeoutSeconds":10},"name":"message-streams-heartbeat-engine","ports":[{"containerPort":5000}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/health/ready","port":5000},"initialDelaySeconds":10,"periodSeconds":5,"successThreshold":1,"timeoutSeconds":5},"resources":{"limits":{"cpu":"2000m","memory":"4000Mi"},"requests":{"cpu":"1000m","memory":"2000Mi"}},"startupProbe":{"failureThreshold":5,"httpGet":{"path":"/health/startup","port":5000},"initialDelaySeconds":0,"periodSeconds":15,"successThreshold":1,"timeoutSeconds":15},"volumeMounts":[{"mountPath":"/mnt/secret-store","name":"message-streams-heartbeat-engine-volume","readOnly":true}]}],"nodeSelector":{"agentpool":"cbldpool"},"restartPolicy":"Always","serviceAccountName":"azure-workload-identity-sa","tolerations":[{"effect":"NoSchedule","key":"fpplus-np-key","operator":"Exists"}],"volumes":[{"csi":{"driver":"secrets-store.csi.k8s.io","readOnly":true,"volumeAttributes":{"secretProviderClass":"message-streams-heartbeat-engine-spc"}},"name":"message-streams-heartbeat-engine-volume"}]}}}}
+    policies.kyverno.io/last-applied-patches: >
+      autogen-add-default-securitycontext.add-default-securitycontext.kyverno.io:
+      added
+        /spec/template/spec/securityContext/runAsNonRoot
+      autogen-drop-pod-capabilities.add-default-securitycontext.kyverno.io:
+      added /spec/template/spec/containers/0/securityContext
+
+      deployment-strategy-recreate.deployment-strategy-recreate.kyverno.io:
+      removed /spec/strategy/rollingUpdate
+  creationTimestamp: '2024-10-13T12:03:12Z'
+  generation: 2935
+  labels:
+    am-ref: message-streams-heartbeat-engine
+    app: message-streams-heartbeat-engine
+    creatoremail: Anusha.Vutukuri_Honeywell.com
+    name: message-streams-heartbeat-engine
+    offeringname: iot-fpplus
+    pipelinekey: QXZYIVRN
+    sbg: HCE
+    sbu: PERFORMANCE
+    unityid: '37242'
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:am-ref: {}
+            f:app: {}
+            f:creatoremail: {}
+            f:name: {}
+            f:offeringname: {}
+            f:pipelinekey: {}
+            f:sbg: {}
+            f:sbu: {}
+            f:unityid: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:am-ref: {}
+                f:app: {}
+                f:creatoremail: {}
+                f:deployment: {}
+                f:offeringname: {}
+                f:pipelinekey: {}
+                f:sbg: {}
+                f:sbu: {}
+                f:unityid: {}
+            f:spec:
+              f:containers:
+                k:{"name":"message-streams-heartbeat-engine"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"APP__NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"APP__TENANTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CACHECONFIG__NOTIFICATIONS__CHANNEL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__MaximumExpirationTime"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__GlobalName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__IsGlobalNameRequired"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__RedisCircutBreakerExceptionCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__RedisCircutBreakerReOpenTimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheExpiry__RedisCacheExpirationForFaultyStreamInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheExpiry__RedisCacheExpiryForNoFilterCacheInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__BLOBCONTAINERNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__CONSUMERGROUPNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__EVENTHUBNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__CHECKPOINTWAITTIMEINMILLISECOND"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__EVENTBATCHMAXIMUMCOUNT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__LOADBALANCINGUPDATEINTERVALINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__MAXIMUMWAITTIMEINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__PARTITIONOWNERSHIPEXPIRATIONINTERVALINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__RETRYTRYTIMEOUTINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EventHubMessageStreamSender__EventHubSendTimeoutInMs"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GLOBALSTORAGE__ACCOUNTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"KafkaMessageStreamSender__KafkaSendTimeoutInMs"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"KafkaMessageStreamSender__MaxAllowedKafkaTopicSizeInBytes"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LAUNCHDARKLYENVIRONMENTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LAUNCHDARKLYSDKKEY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LaunchDarkly__EnvironmentName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LaunchDarkly__SdkKey"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"POSTGRESQL__RetryCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__MAXRETRYATTEMPTS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__PUBLISHMESSAGETASKWAITTIMEINMILLISECONDS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"Service__IsApiService"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__MaximumExpirationTime"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__ResourcePrefix"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:envFrom: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":5000,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/mnt/secret-store"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"message-streams-heartbeat-engine-volume"}:
+                  .: {}
+                  f:csi:
+                    .: {}
+                    f:driver: {}
+                    f:readOnly: {}
+                    f:volumeAttributes:
+                      .: {}
+                      f:secretProviderClass: {}
+                  f:name: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2025-02-06T07:11:18Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:cattle.io/timestamp: {}
+              f:namespace: {}
+            f:spec:
+              f:containers:
+                k:{"name":"message-streams-heartbeat-engine"}:
+                  f:ports:
+                    k:{"containerPort":5000,"protocol":"TCP"}:
+                      f:name: {}
+              f:tolerations: {}
+      manager: rancher
+      operation: Update
+      time: '2025-02-06T07:14:31Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-02-13T18:13:11Z'
+  name: message-streams-heartbeat-engine
+  namespace: hce-cbld-iot-performance
+  resourceVersion: '3054832676'
+  uid: 0bba35ca-fc8b-4f7a-b0c3-9108d6950ee9
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 16
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: message-streams-heartbeat-engine
+      deployment: message-streams-heartbeat-engine
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: '2024-11-25T20:21:12Z'
+        prometheus.io/port: '5000'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        am-ref: message-streams-heartbeat-engine
+        app: message-streams-heartbeat-engine
+        creatoremail: Anusha.Vutukuri_Honeywell.com
+        deployment: message-streams-heartbeat-engine
+        offeringname: iot-fpplus
+        pipelinekey: QXZYIVRN
+        sbg: HCE
+        sbu: PERFORMANCE
+        unityid: '37242'
+      namespace: hce-cbld-iot-performance
+    spec:
+      containers:
+        - env:
+            - name: APP__NAME
+              value: message-streams-heartbeat-engine
+            - name: CACHECONFIG__NOTIFICATIONS__CHANNEL
+              value: MessageStreams_cbpt03loaddev
+            - name: APP__TENANTNAME
+              value: cbpt03loaddev
+            - name: LAUNCHDARKLYSDKKEY
+              value: sdk-66599b73-55e6-4c25-806a-bc2b298314c2
+            - name: LAUNCHDARKLYENVIRONMENTNAME
+              value: qxzyivrn_jyymprvl
+            - name: GLOBALSTORAGE__ACCOUNTNAME
+              value: cbpg03loaddev
+            - name: EventHubMessageStreamSender__EventHubSendTimeoutInMs
+              value: '10000'
+            - name: KafkaMessageStreamSender__KafkaSendTimeoutInMs
+              value: '20000'
+            - name: KafkaMessageStreamSender__MaxAllowedKafkaTopicSizeInBytes
+              value: '25000000'
+            - name: CacheExpiry__RedisCacheExpirationForFaultyStreamInSeconds
+              value: '300'
+            - name: CacheExpiry__RedisCacheExpiryForNoFilterCacheInSeconds
+              value: '60'
+            - name: CacheConfig__RedisConfig__DefaultExpiration__TimeInSeconds
+              value: '604800'
+            - name: CacheConfig__RedisConfig__RedisCircutBreakerReOpenTimeInSeconds
+              value: '60'
+            - name: CacheConfig__RedisConfig__RedisCircutBreakerExceptionCount
+              value: '1'
+            - name: CacheConfig__RedisConfig__DefaultExpiration__ExpirationType
+              value: Absolute
+            - name: CacheConfig__InMemoryConfig__MaximumExpirationTime
+              value: '604800'
+            - name: CacheConfig__RedisConfig__GlobalName
+              value: cbpg03loaddev
+            - name: CacheConfig__RedisConfig__IsGlobalNameRequired
+              value: 'false'
+            - name: CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds
+              value: '120'
+            - name: CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType
+              value: Absolute
+            - name: EVENTHUBCONFIG__EVENTHUBNAME
+              value: deviceheartbeatnotification1.ordered
+            - name: EVENTHUBCONFIG__BLOBCONTAINERNAME
+              value: iot-vnext-eventhub-checkpoints
+            - name: EVENTHUBCONFIG__CONSUMERGROUPNAME
+              value: message-streams
+            - name: EVENTHUBCONFIG__OPTIONS__RETRYTRYTIMEOUTINSEC
+              value: '60'
+            - name: >-
+                EVENTHUBCONFIG__OPTIONS__PARTITIONOWNERSHIPEXPIRATIONINTERVALINSEC
+              value: '30'
+            - name: EVENTHUBCONFIG__OPTIONS__LOADBALANCINGUPDATEINTERVALINSEC
+              value: '10'
+            - name: EVENTHUBCONFIG__OPTIONS__MAXIMUMWAITTIMEINSEC
+              value: '60'
+            - name: EVENTHUBCONFIG__OPTIONS__CHECKPOINTWAITTIMEINMILLISECOND
+              value: '2000'
+            - name: EVENTHUBCONFIG__OPTIONS__EVENTBATCHMAXIMUMCOUNT
+              value: '10'
+            - name: TenantConfig__ResourcePrefix
+              value: cbpg03loaddev/system/
+            - name: TenantConfig__CacheConfig__InMemoryConfig__MaximumExpirationTime
+              value: '512'
+            - name: >-
+                TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds
+              value: '200'
+            - name: >-
+                TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType
+              value: Absolute
+            - name: >-
+                TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString
+              value: >-
+                DefaultEndpointsProtocol=https;AccountName=epmgcpltpsr;AccountKey=B2ri8tsCyCo6OnV+oEzb5wfEbz6aXhRMvnt7QIfB2WL5sKFXwjk5H9118SrK/QKiMKRnYq5m2F6pc6ImfsOIZQ==;EndpointSuffix=core.windows.net
+            - name: LaunchDarkly__SdkKey
+              value: sdk-66599b73-55e6-4c25-806a-bc2b298314c2
+            - name: LaunchDarkly__EnvironmentName
+              value: Performance - AKS_US_CBLD
+            - name: >-
+                PUBLISHEREVENTHUBCONFIGURATIONS__PUBLISHMESSAGETASKWAITTIMEINMILLISECONDS
+              value: '60000'
+            - name: PUBLISHEREVENTHUBCONFIGURATIONS__MAXRETRYATTEMPTS
+              value: '100'
+            - name: POSTGRESQL__RetryCount
+              value: '5'
+            - name: Service__IsApiService
+              value: 'false'
+          envFrom:
+            - secretRef:
+                name: message-streams-heartbeat-engine-secret
+          image: >-
+            iot-fpplus-docker-stable-local.artifactory-na.honeywell.com/iot-fpplus.annotation-pointhistory-streamer:0.1.229
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /health/live
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 300
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: message-streams-heartbeat-engine
+          ports:
+            - containerPort: 5000
+              name: 5000tcp
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health/ready
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            limits:
+              cpu: '2'
+              memory: 4000Mi
+            requests:
+              cpu: '1'
+              memory: 2000Mi
+          securityContext:
+            capabilities:
+              drop:
+                - KILL
+                - MKNOD
+                - SETGID
+                - SETUID
+                - NET_RAW
+                - DAC_OVERRIDE
+                - SYS_PTRACE
+                - SYS_ADMIN
+                - CHOWN
+            readOnlyRootFilesystem: false
+          startupProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /health/startup
+              port: 5000
+              scheme: HTTP
+            periodSeconds: 15
+            successThreshold: 1
+            timeoutSeconds: 15
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /mnt/secret-store
+              name: message-streams-heartbeat-engine-volume
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        agentpool: cbldpool
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 2000
+        runAsGroup: 3000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccount: azure-workload-identity-sa
+      serviceAccountName: azure-workload-identity-sa
+      terminationGracePeriodSeconds: 30
+      tolerations:
+        - effect: NoSchedule
+          key: cbld-np-key
+          operator: Exists
+      volumes:
+        - csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: message-streams-heartbeat-engine-spc
+          name: message-streams-heartbeat-engine-volume
+status:
+  availableReplicas: 16
+  conditions:
+    - lastTransitionTime: '2025-01-30T07:31:19Z'
+      lastUpdateTime: '2025-02-06T07:15:38Z'
+      message: >-
+        ReplicaSet "message-streams-heartbeat-engine-75db6b54fb" has
+        successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: 'True'
+      type: Progressing
+    - lastTransitionTime: '2025-02-13T18:13:11Z'
+      lastUpdateTime: '2025-02-13T18:13:11Z'
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+  observedGeneration: 2935
+  readyReplicas: 16
+  replicas: 16
+  updatedReplicas: 16

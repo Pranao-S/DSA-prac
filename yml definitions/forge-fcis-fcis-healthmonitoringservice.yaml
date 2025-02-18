@@ -1,0 +1,493 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '5'
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["10.22.40.60"],"port":443,"protocol":"HTTPS","serviceName":"hce-fpplus-fcs-performance:forge-fcis-fcis-healthmonitoringservice-svc","ingressName":"hce-fpplus-fcs-performance:forge-fcis-fcis-healthmonitoringservice-ingress","hostname":"healthmonitoringservice-psr.apps.psr.aks.forgeapp.honeywell.com","path":"/","allNodes":false},{"addresses":["10.22.40.60"],"port":443,"protocol":"HTTPS","serviceName":"hce-fpplus-fcs-performance:forge-fcis-fcis-healthmonitoringservice-svc","ingressName":"hce-fpplus-fcs-performance:forge-fcis-fcis-healthmonitoringservice-ingress","hostname":"healthmonitoringservice-psr.apps.psr.aks.forgeapp.honeywell.com","path":"/actuator/health","allNodes":false}]
+    meta.helm.sh/release-name: forge-fcis
+    meta.helm.sh/release-namespace: hce-fpplus-fcs-performance
+    policies.kyverno.io/last-applied-patches: >
+      autogen-add-default-securitycontext.add-default-securitycontext.kyverno.io:
+      added
+        /spec/template/spec/securityContext/runAsUser
+      autogen-drop-pod-capabilities.add-default-securitycontext.kyverno.io:
+      added /spec/template/spec/containers/0/securityContext
+
+      deployment-strategy-recreate.deployment-strategy-recreate.kyverno.io:
+      removed /spec/strategy/rollingUpdate
+    prometheus.io/path: /actuator/prometheus
+    prometheus.io/port: '7000'
+    prometheus.io/scrape: 'true'
+  creationTimestamp: '2024-12-18T13:52:19Z'
+  generation: 6
+  labels:
+    app: forge-fcis-fcis-healthmonitoringservice
+    app.kubernetes.io/managed-by: Helm
+    creatoremail: Rakesh.Rath_Honeywell.com
+    deployment: forge-fcis-fcis-healthmonitoringservice
+    offeringname: forge_data_pipeline
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:field.cattle.io/publicEndpoints: {}
+      manager: rancher
+      operation: Update
+      time: '2024-12-18T13:53:22Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:prometheus.io/path: {}
+            f:prometheus.io/port: {}
+            f:prometheus.io/scrape: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:creatoremail: {}
+            f:deployment: {}
+            f:offeringname: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:deployment: {}
+            f:spec:
+              f:containers:
+                k:{"name":"healthmonitoringservice"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"AZURE_CLIENT_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"AZURE_FEDERATED_TOKEN_FILE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"AZURE_TENANT_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"DEPENDENT_SERVICE_BASE_URL"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"FCI_LOG_ROOT_LEVEL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"FCI_MANAGEMENT_PORT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_schema"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_url"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_FCI_db_username"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_GLOBAL_OPA_ENABLED"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_GPA_URL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_INTFW_JWKS_URI"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_INTFW_OPA_URL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HCE_INTFW_TOKEN_EXPIRY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HEALTH_REPORT_RETENTION_SIZE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HealthMonitorServiceBusQueue"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"IDENTITY_TOKEN_URL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"MAX_HTTP_HEADER_SIZE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"MAX_HTTP_HEADER_SIZE_NUMBER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"Name"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SKIP_AUTHORIZATION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ServiceBusEndpoint"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:envFrom: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/mnt/secret-store"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/var/run/secrets/tokens"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:nodeSelector: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"forge-fcis-fcis-healthmonitoringservice-spc-volume"}:
+                  .: {}
+                  f:csi:
+                    .: {}
+                    f:driver: {}
+                    f:readOnly: {}
+                    f:volumeAttributes:
+                      .: {}
+                      f:secretProviderClass: {}
+                  f:name: {}
+                k:{"name":"service-acc-token"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+      manager: helm
+      operation: Update
+      time: '2025-02-14T09:36:49Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-02-14T09:38:25Z'
+  name: forge-fcis-fcis-healthmonitoringservice
+  namespace: hce-fpplus-fcs-performance
+  resourceVersion: '3057045581'
+  uid: 3c1e990b-0ad4-45cb-b276-0fde57eedec3
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: forge-fcis-fcis-healthmonitoringservice
+      deployment: forge-fcis-fcis-healthmonitoringservice
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: '7000'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        app: forge-fcis-fcis-healthmonitoringservice
+        deployment: forge-fcis-fcis-healthmonitoringservice
+    spec:
+      containers:
+        - env:
+            - name: DEPENDENT_SERVICE_BASE_URL
+            - name: FCI_LOG_ROOT_LEVEL
+              value: INFO
+            - name: HCE_INTFW_TOKEN_EXPIRY
+              value: '600000'
+            - name: HEALTH_REPORT_RETENTION_SIZE
+              value: '100'
+            - name: HealthMonitorServiceBusQueue
+              value: sbq-fp-fcis-healthstatus-psr
+            - name: Name
+              value: healthmonitoringservice
+            - name: AZURE_CLIENT_ID
+              value: 665763c2-efa1-433f-98bb-e96ceec5aa7b
+            - name: AZURE_FEDERATED_TOKEN_FILE
+              value: ../var/run/secrets/tokens/service-acc-token
+            - name: AZURE_TENANT_ID
+              value: 96ece526-9c7d-48b0-8daf-8b93c90a5d18
+            - name: FCI_MANAGEMENT_PORT
+              value: '7000'
+            - name: HCE_FCI_db_schema
+              value: forgecloudintegrations
+            - name: HCE_FCI_db_url
+              value: >-
+                jdbc:postgresql://flexpsql-fp-sit-eastus-01.postgres.database.azure.com:5432/fp_fci_postgres_psr
+            - name: HCE_FCI_db_username
+              value: fp_fci_psr_dbowner
+            - name: HCE_GLOBAL_OPA_ENABLED
+              value: 'false'
+            - name: HCE_GPA_URL
+              value: >-
+                https://builder-gpa-psr.apps.psr.aks.forgeapp.honeywell.com/v1/tenants/projectId/allowed-for-any-resource
+            - name: HCE_INTFW_JWKS_URI
+              value: >-
+                https://builder-federated-identity-psr.honeywellforge.com/.well-known/jwks.json
+            - name: HCE_INTFW_OPA_URL
+              value: >-
+                https://fcispolicyagent-psr.apps.psr.aks.forgeapp.honeywell.com/v1/data/forge/cloudintegrationservice/deny
+            - name: IDENTITY_TOKEN_URL
+              value: >-
+                https://builder-federated-identity-psr.honeywellforge.com/oauth2/token
+            - name: MAX_HTTP_HEADER_SIZE
+              value: 8KB
+            - name: MAX_HTTP_HEADER_SIZE_NUMBER
+              value: '8'
+            - name: SKIP_AUTHORIZATION
+              value: NOT_ALLOW_AUTH_SKIP
+            - name: ServiceBusEndpoint
+              value: sb-fp-nonprod-eastus-01.servicebus.windows.net
+          envFrom:
+            - secretRef:
+                name: forge-fcis-fcis-healthmonitoringservice-spc-secret
+          image: >-
+            fci-docker-stable-local.artifactory-na.honeywell.com/fci.healthmonitoringservice:0.1.19
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: healthmonitoringservice
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 700m
+              memory: 700Mi
+            requests:
+              cpu: 700m
+              memory: 700Mi
+          securityContext:
+            capabilities:
+              drop:
+                - KILL
+                - MKNOD
+                - SETGID
+                - SETUID
+                - NET_RAW
+                - DAC_OVERRIDE
+                - SYS_PTRACE
+                - SYS_ADMIN
+                - CHOWN
+            readOnlyRootFilesystem: false
+          startupProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/startup
+              port: 7000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 1
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /mnt/secret-store
+              name: forge-fcis-fcis-healthmonitoringservice-spc-volume
+              readOnly: true
+            - mountPath: /var/run/secrets/tokens
+              name: service-acc-token
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        agentpool: fppluspool
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 2000
+        runAsGroup: 3000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccount: azure-workload-identity-sa
+      serviceAccountName: azure-workload-identity-sa
+      terminationGracePeriodSeconds: 30
+      tolerations:
+        - effect: NoSchedule
+          key: fpplus-np-key
+          operator: Exists
+      volumes:
+        - csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: forge-fcis-fcis-healthmonitoringservice-spc
+          name: forge-fcis-fcis-healthmonitoringservice-spc-volume
+        - name: service-acc-token
+          projected:
+            defaultMode: 420
+            sources:
+              - serviceAccountToken:
+                  audience: api://AzureADTokenExchange
+                  expirationSeconds: 3600
+                  path: service-acc-token
+status:
+  availableReplicas: 1
+  conditions:
+    - lastTransitionTime: '2025-02-14T09:38:25Z'
+      lastUpdateTime: '2025-02-14T09:38:25Z'
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2024-12-18T13:52:19Z'
+      lastUpdateTime: '2025-02-14T09:38:25Z'
+      message: >-
+        ReplicaSet "forge-fcis-fcis-healthmonitoringservice-dcc766985" has
+        successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: 'True'
+      type: Progressing
+  observedGeneration: 6
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
