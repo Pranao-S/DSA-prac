@@ -1,0 +1,9 @@
+Commands to delete commit history in case any private variables, API keys or values have been exposed
+
+step1 : install bfg.jar file
+step2: make sure java is installed in computer
+step3: java -jar "C:\Users\prana\Downloads\bfg.jar" --delete-files "<filename which is to be deleted>" "F:\Github\DSA-prac"
+step4: git reflog expire --expire=now --all
+step5: git gc --prune=now --aggressive
+step6: git push --force --all
+step7: git push --force --tags
