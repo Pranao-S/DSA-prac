@@ -1,0 +1,5 @@
+Q. What is sku?
+In Azure, “SKU” stands for “Stock Keeping Unit.” 
+SKU refers to a specific version or offering of a resource within Azure. 
+It defines the characteristics, capabilities, features, performance levels, and pricing of various Azure resources and services like virtual machines, storage accounts, databases
+

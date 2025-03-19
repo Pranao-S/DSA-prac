@@ -1,0 +1,602 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '33'
+    kubectl.kubernetes.io/last-applied-configuration: >
+  creationTimestamp: ''
+  generation: 2935
+  labels:
+    am-ref: <microservice-name>
+    app: <microservice-name>
+    creatoremail: <email-id>
+    name: <microservice-name>
+    offeringname: 
+    pipelinekey: 
+    sbg: 
+    sbu: 
+    unityid: ''
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:am-ref: {}
+            f:app: {}
+            f:creatoremail: {}
+            f:name: {}
+            f:offeringname: {}
+            f:pipelinekey: {}
+            f:sbg: {}
+            f:sbu: {}
+            f:unityid: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:am-ref: {}
+                f:app: {}
+                f:creatoremail: {}
+                f:deployment: {}
+                f:offeringname: {}
+                f:pipelinekey: {}
+                f:sbg: {}
+                f:sbu: {}
+                f:unityid: {}
+            f:spec:
+              f:containers:
+                k:{"name":"<microservice-name>"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"APP__NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"APP__TENANTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CACHECONFIG__NOTIFICATIONS__CHANNEL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__InMemoryConfig__MaximumExpirationTime"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__GlobalName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__IsGlobalNameRequired"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__RedisCircutBreakerExceptionCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheConfig__RedisConfig__RedisCircutBreakerReOpenTimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheExpiry__RedisCacheExpirationForFaultyStreamInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CacheExpiry__RedisCacheExpiryForNoFilterCacheInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__BLOBCONTAINERNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__CONSUMERGROUPNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__EVENTHUBNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__CHECKPOINTWAITTIMEINMILLISECOND"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__EVENTBATCHMAXIMUMCOUNT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__LOADBALANCINGUPDATEINTERVALINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__MAXIMUMWAITTIMEINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__PARTITIONOWNERSHIPEXPIRATIONINTERVALINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EVENTHUBCONFIG__OPTIONS__RETRYTRYTIMEOUTINSEC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"EventHubMessageStreamSender__EventHubSendTimeoutInMs"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GLOBALSTORAGE__ACCOUNTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"KafkaMessageStreamSender__KafkaSendTimeoutInMs"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"KafkaMessageStreamSender__MaxAllowedKafkaTopicSizeInBytes"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LAUNCHDARKLYENVIRONMENTNAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LAUNCHDARKLYSDKKEY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LaunchDarkly__EnvironmentName"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"LaunchDarkly__SdkKey"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"POSTGRESQL__RetryCount"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__MAXRETRYATTEMPTS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUBLISHEREVENTHUBCONFIGURATIONS__PUBLISHMESSAGETASKWAITTIMEINMILLISECONDS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"Service__IsApiService"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__CacheConfig__InMemoryConfig__MaximumExpirationTime"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__ResourcePrefix"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:envFrom: {}
+                  f:image: <version specified>
+                  f:imagePullPolicy: IfNotPresent
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: 5
+                    f:httpGet:
+                      .: {}
+                      f:path: /health/live
+                      f:port: 5000
+                      f:scheme: HTTP
+                    f:initialDelaySeconds: 60
+                    f:periodSeconds: 300
+                    f:successThreshold: 1
+                    f:timeoutSeconds: 10
+                  f:name: <microservice-name>
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":5000,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: 3
+                    f:httpGet:
+                      .: {}
+                      f:path: /health/ready
+                      f:port: 5000
+                      f:scheme: HTTP
+                    f:initialDelaySeconds: 10
+                    f:periodSeconds: 5
+                    f:successThreshold: 1
+                    f:timeoutSeconds: 5
+                  f:resources: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: 5
+                    f:httpGet:
+                      .: {}
+                      f:path: /health/startup
+                      f:port: 5000
+                      f:scheme: HTTP
+                    f:periodSeconds: 15
+                    f:successThreshold: 1
+                    f:timeoutSeconds: 15
+                  f:terminationMessagePath: /dev/termination-log
+                  f:terminationMessagePolicy: File
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/mnt/secret-store"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: ClusterFirst
+              f:nodeSelector:
+                agentpool: cbldpool
+              f:restartPolicy: Always
+              f:schedulerName: default-scheduler
+              f:securityContext:
+                fsGroup: 2000
+                runAsGroup: 3000
+                runAsNonRoot: true
+                runAsUser: 1000
+              f:serviceAccount: azure-workload-identity-sa
+              f:serviceAccountName: azure-workload-identity-sa
+              f:terminationGracePeriodSeconds: 30
+              f:tolerations:
+                - effect: 
+                  key: 
+                  operator: Exists
+              f:volumes:
+                .: {}
+                k:{"name":"<microservice-name>-volume"}:
+                  .: {}
+                  f:csi:
+                    .: {}
+                    f:driver: <keyvault-secrets>
+                    f:readOnly: true
+                    f:volumeAttributes:
+                      .: {}
+                      f:secretProviderClass: <microservice-name>-spc
+                  f:name: <microservice-name>-volume
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: ''
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:cattle.io/timestamp: {}
+              f:namespace: {}
+            f:spec:
+              f:containers:
+                k:{"name":"<microservice-name>"}:
+                  f:ports:
+                    k:{"containerPort":5000,"protocol":"TCP"}:
+                      f:name: {}
+              f:tolerations: {}
+      manager: rancher
+      operation: Update
+      time: ''
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-02-13T18:13:11Z'
+  name: <microservice-name>
+  namespace: 
+  resourceVersion: ''
+  uid: 
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 16
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: <microservice-name>
+      deployment: <microservice-name>
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: '2024-11-25T20:21:12Z'
+        prometheus.io/port: '5000'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        am-ref: <microservice-name>
+        app: <microservice-name>
+        creatoremail: <email-id>
+        deployment: <microservice-name>
+        offeringname: iot-fpplus
+        pipelinekey: 
+        sbg:
+        sbu: 
+        unityid: ''
+      namespace: 
+    spec:
+      containers:
+        - env:
+            - name: APP__NAME
+              value: 
+            - name: CACHECONFIG__NOTIFICATIONS__CHANNEL
+              value: 
+            - name: APP__TENANTNAME
+              value: 
+            - name: LAUNCHDARKLYSDKKEY
+              value: 
+            - name: LAUNCHDARKLYENVIRONMENTNAME
+              value: 
+            - name: GLOBALSTORAGE__ACCOUNTNAME
+              value: 
+            - name: EventHubMessageStreamSender__EventHubSendTimeoutInMs
+              value: ''
+            - name: KafkaMessageStreamSender__KafkaSendTimeoutInMs
+              value: ''
+            - name: KafkaMessageStreamSender__MaxAllowedKafkaTopicSizeInBytes
+              value: ''
+            - name: CacheExpiry__RedisCacheExpirationForFaultyStreamInSeconds
+              value: ''
+            - name: CacheExpiry__RedisCacheExpiryForNoFilterCacheInSeconds
+              value: ''
+            - name: CacheConfig__RedisConfig__DefaultExpiration__TimeInSeconds
+              value: ''
+            - name: CacheConfig__RedisConfig__RedisCircutBreakerReOpenTimeInSeconds
+              value: ''
+            - name: CacheConfig__RedisConfig__RedisCircutBreakerExceptionCount
+              value: ''
+            - name: CacheConfig__RedisConfig__DefaultExpiration__ExpirationType
+              value: 
+            - name: CacheConfig__InMemoryConfig__MaximumExpirationTime
+              value: ''
+            - name: CacheConfig__RedisConfig__GlobalName
+              value: 
+            - name: CacheConfig__RedisConfig__IsGlobalNameRequired
+              value: ''
+            - name: CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds
+              value: ''
+            - name: CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType
+              value: 
+            - name: EVENTHUBCONFIG__EVENTHUBNAME
+              value: 
+            - name: EVENTHUBCONFIG__BLOBCONTAINERNAME
+              value: 
+            - name: EVENTHUBCONFIG__CONSUMERGROUPNAME
+              value: 
+            - name: EVENTHUBCONFIG__OPTIONS__RETRYTRYTIMEOUTINSEC
+              value: ''
+            - name: >-
+                EVENTHUBCONFIG__OPTIONS__PARTITIONOWNERSHIPEXPIRATIONINTERVALINSEC
+              value: ''
+            - name: EVENTHUBCONFIG__OPTIONS__LOADBALANCINGUPDATEINTERVALINSEC
+              value: ''
+            - name: EVENTHUBCONFIG__OPTIONS__MAXIMUMWAITTIMEINSEC
+              value: ''
+            - name: EVENTHUBCONFIG__OPTIONS__CHECKPOINTWAITTIMEINMILLISECOND
+              value: ''
+            - name: EVENTHUBCONFIG__OPTIONS__EVENTBATCHMAXIMUMCOUNT
+              value: ''
+            - name: TenantConfig__ResourcePrefix
+              value: 
+            - name: TenantConfig__CacheConfig__InMemoryConfig__MaximumExpirationTime
+              value: '512'
+            - name: >-
+                TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__TimeInSeconds
+              value: ''
+            - name: >-
+                TenantConfig__CacheConfig__InMemoryConfig__DefaultExpiration__ExpirationType
+              value: 
+            - name: >-
+                TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString
+              value: >-
+                DefaultEndpointsProtocol=https;AccountName=epmgcpltpsr;AccountKey=B2ri8tsCyCo6OnV+oEzb5wfEbz6aXhRMvnt7QIfB2WL5sKFXwjk5H9118SrK/QKiMKRnYq5m2F6pc6ImfsOIZQ==;EndpointSuffix=core.windows.net
+            - name: LaunchDarkly__SdkKey
+              value: 
+            - name: LaunchDarkly__EnvironmentName
+              value: 
+            - name: >-
+                PUBLISHEREVENTHUBCONFIGURATIONS__PUBLISHMESSAGETASKWAITTIMEINMILLISECONDS
+              value: ''
+            - name: PUBLISHEREVENTHUBCONFIGURATIONS__MAXRETRYATTEMPTS
+              value: ''
+            - name: POSTGRESQL__RetryCount
+              value: ''
+            - name: Service__IsApiService
+              value: ''
+          envFrom:
+            - secretRef:
+                name: <microservice-name>-secret
+          image: >-
+            <version specified>
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /health/live
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 300
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: <microservice-name>
+          ports:
+            - containerPort: 5000
+              name: 
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /health/ready
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            limits:
+              cpu: ''
+              memory: 
+            requests:
+              cpu: ''
+              memory: 
+          securityContext:
+            capabilities:
+              drop:
+                - KILL
+                - MKNOD
+                - SETGID
+                - SETUID
+                - NET_RAW
+                - DAC_OVERRIDE
+                - SYS_PTRACE
+                - SYS_ADMIN
+                - CHOWN
+            readOnlyRootFilesystem: true //possible vulnerability for attackers
+          startupProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /health/startup
+              port: 5000
+              scheme: HTTP
+            periodSeconds: 15
+            successThreshold: 1
+            timeoutSeconds: 15
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /mnt/secret-store
+              name: <microservice-name>-volume
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        agentpool: cbldpool
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 2000
+        runAsGroup: 3000
+        runAsNonRoot: true
+        runAsUser: 1000
+      serviceAccount: azure-workload-identity-sa
+      serviceAccountName: azure-workload-identity-sa
+      terminationGracePeriodSeconds: 30
+      tolerations:
+        - effect: 
+          key: 
+          operator: Exists
+      volumes:
+        - csi:
+            driver: <keyvault-secrets>
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: <microservice-name>-spc
+          name: <microservice-name>-volume
+status:
+  availableReplicas: 16
+  conditions:
+    - lastTransitionTime: ''
+      lastUpdateTime: ''
+      message: >-
+        ReplicaSet "<microservice-name>-<number>" has
+        successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: ''
+      type: 
+    - lastTransitionTime: ''
+      lastUpdateTime: ''
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+  observedGeneration: 2935
+  readyReplicas: 16
+  replicas: 16
+  updatedReplicas: 16
