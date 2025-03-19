@@ -474,8 +474,7 @@ spec:
               value: 
             - name: >-
                 TenantConfig__ResourceRegistryAuthConfig__StorageConnectionString
-              value: >-
-                DefaultEndpointsProtocol=https;AccountName=epmgcpltpsr;AccountKey=B2ri8tsCyCo6OnV+oEzb5wfEbz6aXhRMvnt7QIfB2WL5sKFXwjk5H9118SrK/QKiMKRnYq5m2F6pc6ImfsOIZQ==;EndpointSuffix=core.windows.net
+              value:
             - name: LaunchDarkly__SdkKey
               value: 
             - name: LaunchDarkly__EnvironmentName
