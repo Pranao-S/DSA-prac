@@ -1,0 +1,6 @@
+Error 1
+PS C:\Users\prana\.kube> kubectl cluster-info
+E0323 22:05:52.001440   13032 memcache.go:265] 
+"Unhandled Error" err="couldn't get current server API group list: 
+Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: 
+No connection could be made because the target machine actively refused it."
