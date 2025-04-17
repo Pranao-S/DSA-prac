@@ -7,3 +7,7 @@ step4: git reflog expire --expire=now --all
 step5: git gc --prune=now --aggressive
 step6: git push --force --all
 step7: git push --force --tags
+
+
+Git command to show name of repository in directory
+git rev-parse --show-toplevel
