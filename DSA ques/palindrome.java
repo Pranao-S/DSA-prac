@@ -19,7 +19,7 @@ public class palindrome{
             // Create an object to call the non-static method
             palindrome checker = new palindrome();
             boolean result = checker.isPalindrome(number);
-    
+            scanner.close();
             System.out.println("Is " + number + " a palindrome? " + result);
         }
 }
