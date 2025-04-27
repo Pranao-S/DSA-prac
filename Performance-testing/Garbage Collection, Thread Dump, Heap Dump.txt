@@ -1,0 +1,47 @@
+Java Virtual Machine (JVM) generates 3 critical artifacts that are useful for optimizing the performance and troubleshooting production problems. Those artifacts are:
+
+1. Garbage collection (GC) log
+2. Thread Dump
+3. Heap Dump
+
+Garbage collection -
+
+1. How to generate GC Log?
+	You can generate garbage collection log, by passing following JVM arguments:
+	-Xlog:gc*:file=<file-path>
+	file-path: is the location where Garbage Collection log file will be written
+
+Tools for analyzing garbage collection logs - HP Jmeter, IBM GC & Memory visualizer
+
+Thread dump-
+What is a thread dump?
+	Thread dump is snapshot of all threads running in the application at point in time. It contains all the information about each thread in the application such as: thread state, thread Id, native Id, thread name, stack trace, priority
+
+Where is Thread dump used?
+	Thread dumps are primarily used for troubleshooting production problems such as CPU spikes, unresponsiveness in the application, poor response time, hung threads, high memory consumption.
+	
+Generating thread dump - jstack -l  <pid> > <file-path>
+
+thread dump analysis tools: fastThread, Samurai, IBM Thread & Monitor analyzer, Visual VM
+
+
+Heap dump
+a) What is Heap dump? 
+ Heap dump is a snapshot of your application’s memory in a point in time. It contains information such as what are the objects in memory, what values do they carry, what is their size, what other objects do they reference.
+ 
+Where is Heap dump used?
+ Heap dumps are primarily used for troubleshooting memory related, OutOfMemoryError problems.
+
+d) How to generate Heap dump?
+ Heap dump can be captured from the running application using 8 different options. Most common option to take heap dump is to use the ‘jmap’ tool. jmap tool is shipped in JDK_HOME\bin folder. Here is the command that you need to issue to capture:
+
+jmap -dump:format=b,
+file=<file-path> <pid> 
+where
+
+pid: is the Java Process Id, whose heap dump should be captured
+
+file-path: is the file path where heap dump will be written in to
+
+What Tools are used to analyze Heap dump?
+	Here are the most widely used heap dump analysis tools: Eclipse MAT, HeapHero, JVisualVM.
